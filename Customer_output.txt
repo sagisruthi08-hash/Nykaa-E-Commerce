@@ -1,0 +1,311 @@
+CREATE TABLE Customer (
+  2      Customer_ID NUMBER PRIMARY KEY,
+  3      First_Name VARCHAR2(30),
+  4      Last_Name VARCHAR2(30),
+  5      Email VARCHAR2(50),
+  6      Phone VARCHAR2(15),
+  7      Address VARCHAR2(100),
+  8      Password VARCHAR2(30)
+  9  );
+
+Table created.
+
+SQL> INSERT INTO Customer VALUES(101, 'Sruthi', 'Sagi', 'sruthi@gmail.com', '9876543210', 'Chennai', 'sruthi123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(102, 'Rahul', 'Kumar', 'rahul@gmail.com', '9876543211', 'Bangalore', 'rahul123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(103, 'Priya', 'Sharma', 'priya@gmail.com', '9876543212', 'Hyderabad', 'priya123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(104, 'Arun', 'Raj', 'arun@gmail.com', '9876543213', 'Coimbatore', 'arun123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(105, 'Sneha', 'Reddy', 'sneha@gmail.com', '9876543214', 'Vijayawada', 'sneha123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(106, 'Kiran', 'Naidu', 'kiran@gmail.com', '9876543215', 'Visakhapatnam', 'kiran123'); 
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(107, 'Divya', 'Mohan', 'divya@gmail.com', '9876543216', 'Madurai', 'divya123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(108, 'Ajay', 'Singh', 'ajay@gmail.com', '9876543217', 'Delhi', 'ajay123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(109, 'Neha', 'Patel', 'neha@gmail.com', '9876543218', 'Mumbai', 'neha123');
+
+1 row created.
+
+SQL> INSERT INTO Customer VALUES(110, 'Vijay', 'Kumar', 'vijay@gmail.com', '9876543219', 'Pune', 'vijay123');
+
+1 row created.
+
+SQL> SELECT * FROM Customer;
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        101 Sruthi                         Sagi
+sruthi@gmail.com                                   9876543210
+Chennai
+sruthi123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        102 Rahul                          Kumar
+rahul@gmail.com                                    9876543211
+Bangalore
+rahul123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        103 Priya                          Sharma
+priya@gmail.com                                    9876543212
+Hyderabad
+priya123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        104 Arun                           Raj
+arun@gmail.com                                     9876543213
+Coimbatore
+arun123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        105 Sneha                          Reddy
+sneha@gmail.com                                    9876543214
+Vijayawada
+sneha123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        106 Kiran                          Naidu
+kiran@gmail.com                                    9876543215
+Visakhapatnam
+kiran123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        107 Divya                          Mohan
+divya@gmail.com                                    9876543216
+Madurai
+divya123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        108 Ajay                           Singh
+ajay@gmail.com                                     9876543217
+Delhi
+ajay123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        109 Neha                           Patel
+neha@gmail.com                                     9876543218
+Mumbai
+neha123
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        110 Vijay                          Kumar
+vijay@gmail.com                                    9876543219
+Pune
+vijay123
+
+
+10 rows selected.
+
+SQL> SELECT First_Name FROM Customer;
+
+FIRST_NAME
+------------------------------
+Sruthi
+Rahul
+Priya
+Arun
+Sneha
+Kiran
+Divya
+Ajay
+Neha
+Vijay
+
+10 rows selected.
+
+SQL> SELECT First_Name, Last_Name, Email FROM Customer;
+
+FIRST_NAME                     LAST_NAME
+------------------------------ ------------------------------
+EMAIL
+--------------------------------------------------
+Sruthi                         Sagi
+sruthi@gmail.com
+
+Rahul                          Kumar
+rahul@gmail.com
+
+Priya                          Sharma
+priya@gmail.com
+
+
+FIRST_NAME                     LAST_NAME
+------------------------------ ------------------------------
+EMAIL
+--------------------------------------------------
+Arun                           Raj
+arun@gmail.com
+
+Sneha                          Reddy
+sneha@gmail.com
+
+Kiran                          Naidu
+kiran@gmail.com
+
+
+FIRST_NAME                     LAST_NAME
+------------------------------ ------------------------------
+EMAIL
+--------------------------------------------------
+Divya                          Mohan
+divya@gmail.com
+
+Ajay                           Singh
+ajay@gmail.com
+
+Neha                           Patel
+neha@gmail.com
+
+
+FIRST_NAME                     LAST_NAME
+------------------------------ ------------------------------
+EMAIL
+--------------------------------------------------
+Vijay                          Kumar
+vijay@gmail.com
+
+
+10 rows selected.
+
+SQL> SELECT * FROM Customer
+  2  WHERE Customer_ID = 101;
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ ------------------------------
+EMAIL                                              PHONE
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+------------------------------
+        101 Sruthi                         Sagi
+sruthi@gmail.com                                   9876543210
+Chennai
+sruthi123
+
+
+SQL> UPDATE Customer
+  2  SET Phone = '9999999999'
+  3  WHERE Customer_ID = 101;
+
+1 row updated.
+
+SQL> UPDATE Customer
+  2  SET Address = 'Trichy',
+  3      Email = 'sruthi_new@gmail.com'
+  4  WHERE Customer_ID = 101;
+
+1 row updated.
+
+SQL> DELETE FROM Customer
+  2  WHERE Customer_ID = 110;
+
+1 row deleted.
+
+SQL> DELETE FROM Customer;
+
+9 rows deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
