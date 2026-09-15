@@ -1,0 +1,96 @@
+CREATE TABLE Customer (
+Customer_ID NUMBER PRIMARY KEY,
+Customer_Name VARCHAR2(100) NOT NULL,
+Email VARCHAR2(100) UNIQUE NOT NULL,
+Phone_Number VARCHAR2(15),
+Password VARCHAR2(50) NOT NULL,
+Address VARCHAR2(255)
+);
+
+INSERT INTO Customer
+VALUES (1, 'Ananya Rao', 'ananya.rao@gmail.com', '9123456701', 'ananya@123', 'Chennai');
+
+INSERT INTO Customer
+VALUES (2, 'Aditya Menon', 'aditya.menon@gmail.com', '9123456702', 'aditya@123', 'Bangalore');
+
+INSERT INTO Customer
+VALUES (3, 'Kavya Nair', 'kavya.nair@gmail.com', '9123456703', 'kavya@123', 'Kochi');
+
+INSERT INTO Customer
+VALUES (4, 'Rohit Verma', 'rohit.verma@gmail.com', '9123456704', 'rohit@123', 'Hyderabad');
+
+INSERT INTO Customer
+VALUES (5, 'Ishita Das', 'ishita.das@gmail.com', '9123456705', 'ishita@123', 'Kolkata');
+
+INSERT INTO Customer
+VALUES (6, 'Sanjay Reddy', 'sanjay.reddy@gmail.com', '9123456706', 'sanjay@123', 'Vijayawada');
+
+INSERT INTO Customer
+VALUES (7, 'Divya Krishnan', 'divya.krishnan@gmail.com', '9123456707', 'divya@123', 'Madurai');
+
+INSERT INTO Customer
+VALUES (8, 'Arnav Kapoor', 'arnav.kapoor@gmail.com', '9123456708', 'arnav@123', 'Mumbai');
+
+INSERT INTO Customer
+VALUES (9, 'Harini Iyer', 'harini.iyer@gmail.com', '9123456709', 'harini@123', 'Coimbatore');
+
+INSERT INTO Customer
+VALUES (10, 'Vivek Joshi', 'vivek.joshi@gmail.com', '9123456710', 'vivek@123', 'Pune');
+
+SELECT * FROM Customer;
+
+SELECT * FROM Customer
+WHERE Customer_ID = 1;
+
+SELECT * FROM Customer
+WHERE Email = 'ananya.rao@gmail.com';
+
+SELECT * FROM Customer
+WHERE Customer_Name = 'Ananya Rao';
+
+SELECT * FROM Customer
+WHERE Address = 'Chennai';
+
+SELECT Customer_ID, Customer_Name, Email
+FROM Customer;
+
+SELECT * FROM Customer
+ORDER BY Customer_Name;
+
+SELECT COUNT(*) AS Total_Customers
+FROM Customer;
+
+UPDATE Customer
+SET Phone_Number = '9988776601'
+WHERE Customer_ID = 1;
+
+SELECT * FROM Customer
+WHERE Customer_ID = 1;
+
+UPDATE Customer
+SET Address = 'Indiranagar, Bangalore'
+WHERE Customer_ID = 2;
+
+SELECT * FROM Customer
+WHERE Customer_ID = 2;
+
+UPDATE Customer
+SET Email = 'kavya.new@gmail.com'
+WHERE Customer_ID = 3;
+
+SELECT * FROM Customer
+WHERE Customer_ID = 3;
+
+DELETE FROM Customer
+WHERE Email = 'vivek.joshi@gmail.com';
+
+SELECT * FROM Customer;
+
+SELECT Customer_Name, Email, Phone_Number
+FROM Customer
+WHERE Address = 'Chennai';
+
+SELECT * FROM Customer
+ORDER BY Customer_ID;
+
+COMMIT;
