@@ -1,0 +1,188 @@
+CREATE TABLE Category (
+Category_ID NUMBER PRIMARY KEY,
+Category_Name VARCHAR2(100) NOT NULL,
+Description VARCHAR2(255)
+);
+
+INSERT INTO Category
+VALUES (1, 'Skincare', 'Skin care products');
+
+INSERT INTO Category
+VALUES (2, 'Makeup', 'Makeup and beauty products');
+
+INSERT INTO Category
+VALUES (3, 'Haircare', 'Hair care products');
+
+INSERT INTO Category
+VALUES (4, 'Fragrance', 'Perfumes and fragrances');
+
+INSERT INTO Category
+VALUES (5, 'Bath and Body', 'Bath and body products');
+
+INSERT INTO Category
+VALUES (6, 'Personal Care', 'Personal care products');
+
+INSERT INTO Category
+VALUES (7, 'Nails', 'Nail care products');
+
+INSERT INTO Category
+VALUES (8, 'Accessories', 'Beauty accessories');
+
+INSERT INTO Category
+VALUES (9, 'Wellness', 'Health and wellness products');
+
+INSERT INTO Category
+VALUES (10, 'Men', 'Men grooming products');
+
+SELECT * FROM Category;
+
+SELECT * FROM Category
+WHERE Category_ID = 1;
+
+SELECT * FROM Category
+WHERE Category_Name = 'Skincare';
+
+SELECT * FROM Category
+WHERE Description = 'Skin care products';
+
+SELECT Category_ID, Category_Name
+FROM Category;
+
+SELECT * FROM Category
+ORDER BY Category_Name;
+
+SELECT COUNT(*) AS Total_Categories
+FROM Category;
+
+CREATE TABLE Product (
+Product_ID NUMBER PRIMARY KEY,
+Product_Name VARCHAR2(100) NOT NULL,
+Category_ID NUMBER,
+Price NUMBER(10,2),
+Stock NUMBER,
+Brand VARCHAR2(100),
+CONSTRAINT fk_product_category
+FOREIGN KEY (Category_ID)
+REFERENCES Category(Category_ID)
+);
+
+INSERT INTO Product
+VALUES (101, 'Vitamin C Face Serum', 1, 699, 50, 'Minimalist');
+
+INSERT INTO Product
+VALUES (102, 'Face Wash', 1, 399, 40, 'Cetaphil');
+
+INSERT INTO Product
+VALUES (103, 'Matte Lipstick', 2, 599, 35, 'Maybelline');
+
+INSERT INTO Product
+VALUES (104, 'Liquid Foundation', 2, 799, 25, 'Lakme');
+
+INSERT INTO Product
+VALUES (105, 'Anti Hair Fall Shampoo', 3, 499, 45, 'Loreal');
+
+INSERT INTO Product
+VALUES (106, 'Hair Growth Serum', 3, 899, 30, 'WishCare');
+
+INSERT INTO Product
+VALUES (107, 'Floral Perfume', 4, 1299, 20, 'Engage');
+
+INSERT INTO Product
+VALUES (108, 'Body Lotion', 5, 349, 60, 'Nivea');
+
+INSERT INTO Product
+VALUES (109, 'Nail Paint', 7, 199, 50, 'Colorbar');
+
+INSERT INTO Product
+VALUES (110, 'Men Face Wash', 10, 299, 40, 'Beardo');
+
+SELECT * FROM Product;
+
+SELECT * FROM Product
+WHERE Product_ID = 101;
+
+SELECT * FROM Product
+WHERE Product_Name = 'Face Wash';
+
+SELECT * FROM Product
+WHERE Category_ID = 1;
+
+SELECT * FROM Product
+WHERE Brand = 'Minimalist';
+
+SELECT * FROM Product
+WHERE Price < 500;
+
+SELECT Product_ID, Product_Name, Price
+FROM Product;
+
+SELECT * FROM Product
+ORDER BY Product_Name;
+
+SELECT * FROM Product
+ORDER BY Price;
+
+SELECT COUNT(*) AS Total_Products
+FROM Product;
+
+SELECT MAX(Price) AS Maximum_Price
+FROM Product;
+
+SELECT MIN(Price) AS Minimum_Price
+FROM Product;
+
+SELECT AVG(Price) AS Average_Price
+FROM Product;
+
+SELECT SUM(Stock) AS Total_Stock
+FROM Product;
+
+UPDATE Product
+SET Price = 749
+WHERE Product_ID = 101;
+
+SELECT * FROM Product
+WHERE Product_ID = 101;
+
+UPDATE Product
+SET Stock = 75
+WHERE Product_ID = 102;
+
+SELECT * FROM Product
+WHERE Product_ID = 102;
+
+UPDATE Product
+SET Brand = 'Loreal Paris'
+WHERE Product_ID = 105;
+
+SELECT * FROM Product
+WHERE Product_ID = 105;
+
+DELETE FROM Product
+WHERE Product_ID = 110;
+
+SELECT * FROM Product;
+
+SELECT P.Product_ID,
+P.Product_Name,
+C.Category_Name,
+P.Price,
+P.Stock,
+P.Brand
+FROM Product P, Category C
+WHERE P.Category_ID = C.Category_ID;
+
+SELECT P.Product_Name,
+P.Price,
+C.Category_Name
+FROM Product P, Category C
+WHERE P.Category_ID = C.Category_ID
+AND C.Category_Name = 'Skincare';
+
+SELECT C.Category_Name,
+COUNT(P.Product_ID) AS Total_Products
+FROM Category C, Product P
+WHERE C.Category_ID = P.Category_ID
+GROUP BY C.Category_Name;
+
+COMMIT;
