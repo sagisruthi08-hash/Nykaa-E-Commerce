@@ -1,0 +1,327 @@
+ 1. `SELECT * FROM Product;`
+
+| PRODUCT_ID | PRODUCT_NAME           | CATEGORY_ID | PRICE | STOCK | BRAND      |
+| ---------: | ---------------------- | ----------: | ----: | ----: | ---------- |
+|        101 | Vitamin C Face Serum   |           1 |   699 |    50 | Minimalist |
+|        102 | Face Wash              |           1 |   399 |    40 | Cetaphil   |
+|        103 | Matte Lipstick         |           2 |   599 |    35 | Maybelline |
+|        104 | Liquid Foundation      |           2 |   799 |    25 | Lakme      |
+|        105 | Anti Hair Fall Shampoo |           3 |   499 |    45 | Loreal     |
+|        106 | Hair Growth Serum      |           3 |   899 |    30 | WishCare   |
+|        107 | Floral Perfume         |           4 |  1299 |    20 | Engage     |
+|        108 | Body Lotion            |           5 |   349 |    60 | Nivea      |
+|        109 | Nail Paint             |           7 |   199 |    50 | Colorbar   |
+|        110 | Men Face Wash          |          10 |   299 |    40 | Beardo     |
+
+---
+
+## 2. Product ID = 101
+
+```sql
+SELECT * FROM Product
+WHERE Product_ID = 101;
+```
+
+| PRODUCT_ID | PRODUCT_NAME         | CATEGORY_ID | PRICE | STOCK | BRAND      |
+| ---------: | -------------------- | ----------: | ----: | ----: | ---------- |
+|        101 | Vitamin C Face Serum |           1 |   699 |    50 | Minimalist |
+
+---
+
+## 3. Product Name = Face Wash
+
+```sql
+SELECT * FROM Product
+WHERE Product_Name = 'Face Wash';
+```
+
+| PRODUCT_ID | PRODUCT_NAME | CATEGORY_ID | PRICE | STOCK | BRAND    |
+| ---------: | ------------ | ----------: | ----: | ----: | -------- |
+|        102 | Face Wash    |           1 |   399 |    40 | Cetaphil |
+
+---
+
+## 4. Category ID = 1
+
+| PRODUCT_ID | PRODUCT_NAME         | CATEGORY_ID | PRICE | STOCK | BRAND      |
+| ---------: | -------------------- | ----------: | ----: | ----: | ---------- |
+|        101 | Vitamin C Face Serum |           1 |   699 |    50 | Minimalist |
+|        102 | Face Wash            |           1 |   399 |    40 | Cetaphil   |
+
+---
+
+## 5. Brand = Minimalist
+
+| PRODUCT_ID | PRODUCT_NAME         | CATEGORY_ID | PRICE | STOCK | BRAND      |
+| ---------: | -------------------- | ----------: | ----: | ----: | ---------- |
+|        101 | Vitamin C Face Serum |           1 |   699 |    50 | Minimalist |
+
+---
+
+## 6. Price < 500
+
+| PRODUCT_ID | PRODUCT_NAME           | CATEGORY_ID | PRICE | STOCK | BRAND    |
+| ---------: | ---------------------- | ----------: | ----: | ----: | -------- |
+|        102 | Face Wash              |           1 |   399 |    40 | Cetaphil |
+|        105 | Anti Hair Fall Shampoo |           3 |   499 |    45 | Loreal   |
+|        108 | Body Lotion            |           5 |   349 |    60 | Nivea    |
+|        109 | Nail Paint             |           7 |   199 |    50 | Colorbar |
+|        110 | Men Face Wash          |          10 |   299 |    40 | Beardo   |
+
+---
+
+## 7. Selected columns
+
+```sql
+SELECT Product_ID, Product_Name, Price
+FROM Product;
+```
+
+| PRODUCT_ID | PRODUCT_NAME           | PRICE |
+| ---------: | ---------------------- | ----: |
+|        101 | Vitamin C Face Serum   |   699 |
+|        102 | Face Wash              |   399 |
+|        103 | Matte Lipstick         |   599 |
+|        104 | Liquid Foundation      |   799 |
+|        105 | Anti Hair Fall Shampoo |   499 |
+|        106 | Hair Growth Serum      |   899 |
+|        107 | Floral Perfume         |  1299 |
+|        108 | Body Lotion            |   349 |
+|        109 | Nail Paint             |   199 |
+|        110 | Men Face Wash          |   299 |
+
+---
+
+## 8. Order by Product Name
+
+```sql
+SELECT * FROM Product
+ORDER BY Product_Name;
+```
+
+|  ID | PRODUCT_NAME           |
+| --: | ---------------------- |
+| 105 | Anti Hair Fall Shampoo |
+| 108 | Body Lotion            |
+| 102 | Face Wash              |
+| 107 | Floral Perfume         |
+| 106 | Hair Growth Serum      |
+| 104 | Liquid Foundation      |
+| 103 | Matte Lipstick         |
+| 110 | Men Face Wash          |
+| 109 | Nail Paint             |
+| 101 | Vitamin C Face Serum   |
+
+The remaining columns will contain their corresponding original values.
+
+---
+
+## 9. Order by Price
+
+```sql
+SELECT * FROM Product
+ORDER BY Price;
+```
+
+|  ID | PRODUCT_NAME           | PRICE |
+| --: | ---------------------- | ----: |
+| 109 | Nail Paint             |   199 |
+| 110 | Men Face Wash          |   299 |
+| 108 | Body Lotion            |   349 |
+| 102 | Face Wash              |   399 |
+| 105 | Anti Hair Fall Shampoo |   499 |
+| 103 | Matte Lipstick         |   599 |
+| 101 | Vitamin C Face Serum   |   699 |
+| 104 | Liquid Foundation      |   799 |
+| 106 | Hair Growth Serum      |   899 |
+| 107 | Floral Perfume         |  1299 |
+
+---
+
+ Aggregate Function Outputs
+
+### 10. Total Products
+
+```sql
+SELECT COUNT(*) AS Total_Products
+FROM Product;
+```
+
+| TOTAL_PRODUCTS |
+| -------------: |
+|             10 |
+
+### 11. Maximum Price
+
+| MAXIMUM_PRICE |
+| ------------: |
+|          1299 |
+
+### 12. Minimum Price
+
+| MINIMUM_PRICE |
+| ------------: |
+|           199 |
+
+ 13. Average Price
+
+| AVERAGE_PRICE |
+| ------------: |
+|           604 |
+
+ 14. Total Stock
+
+| TOTAL_STOCK |
+| ----------: |
+|         395 |
+
+---
+
+ UPDATE Outputs
+
+### 15. Update Product 101
+
+```sql
+UPDATE Product
+SET Price = 749
+WHERE Product_ID = 101;
+```
+
+Then:
+
+```sql
+SELECT * FROM Product
+WHERE Product_ID = 101;
+```
+
+| PRODUCT_ID | PRODUCT_NAME         | CATEGORY_ID |   PRICE | STOCK | BRAND      |
+| ---------: | -------------------- | ----------: | ------: | ----: | ---------- |
+|        101 | Vitamin C Face Serum |           1 | **749** |    50 | Minimalist |
+
+---
+
+ 16. Update Stock of Product 102
+
+| PRODUCT_ID | PRODUCT_NAME | CATEGORY_ID | PRICE |  STOCK | BRAND    |
+| ---------: | ------------ | ----------: | ----: | -----: | -------- |
+|        102 | Face Wash    |           1 |   399 | **75** | Cetaphil |
+
+---
+
+### 17. Update Brand of Product 105
+
+| PRODUCT_ID | PRODUCT_NAME           | CATEGORY_ID | PRICE | STOCK | BRAND            |
+| ---------: | ---------------------- | ----------: | ----: | ----: | ---------------- |
+|        105 | Anti Hair Fall Shampoo |           3 |   499 |    45 | **Loreal Paris** |
+
+---
+
+ DELETE Output
+
+You execute:
+
+```sql
+DELETE FROM Product
+WHERE Product_ID = 110;
+```
+
+So **Men Face Wash** is removed.
+
+Your final `SELECT * FROM Product;` will contain **9 products**:
+
+|  ID | PRODUCT_NAME           | CATEGORY_ID | PRICE | STOCK | BRAND        |
+| --: | ---------------------- | ----------: | ----: | ----: | ------------ |
+| 101 | Vitamin C Face Serum   |           1 |   749 |    50 | Minimalist   |
+| 102 | Face Wash              |           1 |   399 |    75 | Cetaphil     |
+| 103 | Matte Lipstick         |           2 |   599 |    35 | Maybelline   |
+| 104 | Liquid Foundation      |           2 |   799 |    25 | Lakme        |
+| 105 | Anti Hair Fall Shampoo |           3 |   499 |    45 | Loreal Paris |
+| 106 | Hair Growth Serum      |           3 |   899 |    30 | WishCare     |
+| 107 | Floral Perfume         |           4 |  1299 |    20 | Engage       |
+| 108 | Body Lotion            |           5 |   349 |    60 | Nivea        |
+| 109 | Nail Paint             |           7 |   199 |    50 | Colorbar     |
+
+---
+ Product + Category JOIN
+
+Your query:
+
+```sql
+SELECT P.Product_ID,
+P.Product_Name,
+C.Category_Name,
+P.Price,
+P.Stock,
+P.Brand
+FROM Product P, Category C
+WHERE P.Category_ID = C.Category_ID;
+```
+
+The output depends on the **Category table you created earlier**. Assuming your Category IDs are:
+
+| CATEGORY_ID | CATEGORY_NAME |
+| ----------: | ------------- |
+|           1 | Skincare      |
+|           2 | Makeup        |
+|           3 | Haircare      |
+|           4 | Fragrance     |
+|           5 | Bath & Body   |
+|           7 | Nails         |
+|          10 | Men           |
+
+Then:
+
+| PRODUCT_ID | PRODUCT_NAME           | CATEGORY_NAME | PRICE | STOCK | BRAND        |
+| ---------: | ---------------------- | ------------- | ----: | ----: | ------------ |
+|        101 | Vitamin C Face Serum   | Skincare      |   749 |    50 | Minimalist   |
+|        102 | Face Wash              | Skincare      |   399 |    75 | Cetaphil     |
+|        103 | Matte Lipstick         | Makeup        |   599 |    35 | Maybelline   |
+|        104 | Liquid Foundation      | Makeup        |   799 |    25 | Lakme        |
+|        105 | Anti Hair Fall Shampoo | Haircare      |   499 |    45 | Loreal Paris |
+|        106 | Hair Growth Serum      | Haircare      |   899 |    30 | WishCare     |
+|        107 | Floral Perfume         | Fragrance     |  1299 |    20 | Engage       |
+|        108 | Body Lotion            | Bath & Body   |   349 |    60 | Nivea        |
+|        109 | Nail Paint             | Nails         |   199 |    50 | Colorbar     |
+
+---
+
+ Skincare Products
+
+```sql
+SELECT P.Product_Name,
+P.Price,
+C.Category_Name
+FROM Product P, Category C
+WHERE P.Category_ID = C.Category_ID
+AND C.Category_Name = 'Skincare';
+```
+
+| PRODUCT_NAME         | PRICE | CATEGORY_NAME |
+| -------------------- | ----: | ------------- |
+| Vitamin C Face Serum |   749 | Skincare      |
+| Face Wash            |   399 | Skincare      |
+
+---
+
+ Products Per Category
+
+```sql
+SELECT C.Category_Name,
+COUNT(P.Product_ID) AS Total_Products
+FROM Category C, Product P
+WHERE C.Category_ID = P.Category_ID
+GROUP BY C.Category_Name;
+```
+
+After the deletion of Product 110, assuming only the categories represented by products are returned:
+
+| CATEGORY_NAME | TOTAL_PRODUCTS |
+| ------------- | -------------: |
+| Skincare      |              2 |
+| Makeup        |              2 |
+| Haircare      |              2 |
+| Fragrance     |              1 |
+| Bath & Body   |              1 |
+| Nails         |              1 |
+
+
