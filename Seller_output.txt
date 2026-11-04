@@ -1,0 +1,85 @@
+Table created.
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+| SELLER_ID | SELLER_NAME              | EMAIL                         | PHONE      | ADDRESS   |
+|-----------|--------------------------|-------------------------------|------------|-----------|
+| 501       | Glow Essentials Pvt Ltd  | glowessentials@gmail.com      | 9000000001 | Mumbai    |
+| 502       | Herbal Roots Cosmetics   | herbalroots@gmail.com         | 9000000002 | Delhi     |
+| 503       | Radiant Skin Co           | radiantskin@gmail.com         | 9000000003 | Bangalore |
+| 504       | Chic Fashion House       | chicfashion@gmail.com         | 9000000004 | Hyderabad |
+| 505       | Pure Naturals Store      | purenaturals@gmail.com        | 9000000005 | Chennai   |
+
+5 rows selected.
+
+
+| SELLER_ID | SELLER_NAME             | EMAIL                    | PHONE      | ADDRESS |
+|-----------|-------------------------|--------------------------|------------|---------|
+| 501       | Glow Essentials Pvt Ltd | glowessentials@gmail.com | 9000000001 | Mumbai  |
+
+1 row selected.
+
+
+| SELLER_ID | SELLER_NAME         | EMAIL                  | PHONE      | ADDRESS |
+|-----------|---------------------|------------------------|------------|---------|
+| 505       | Pure Naturals Store | purenaturals@gmail.com | 9000000005 | Chennai |
+
+1 row selected.
+
+
+| SELLER_ID | SELLER_NAME             | EMAIL                    | PHONE      | ADDRESS |
+|-----------|-------------------------|--------------------------|------------|---------|
+| 501       | Glow Essentials Pvt Ltd | glowessentials@gmail.com | 9000000001 | Mumbai  |
+
+1 row selected.
+
+
+| SELLER_ID | SELLER_NAME    | EMAIL                 | PHONE      | ADDRESS   |
+|-----------|----------------|-----------------------|------------|-----------|
+| 503       | Radiant Skin Co| radiantskin@gmail.com | 9000000003 | Bangalore |
+
+1 row selected.
+
+
+| SELLER_ID | SELLER_NAME              | ADDRESS   |
+|-----------|--------------------------|-----------|
+| 504       | Chic Fashion House       | Hyderabad |
+| 501       | Glow Essentials Pvt Ltd  | Mumbai    |
+| 502       | Herbal Roots Cosmetics   | Delhi     |
+| 505       | Pure Naturals Store      | Chennai   |
+| 503       | Radiant Skin Co          | Bangalore |
+
+5 rows selected.
+
+
+| SELLER_ID | SELLER_NAME              | ADDRESS   |
+|-----------|--------------------------|-----------|
+| 505       | Pure Naturals Store      | Chennai   |
+| 504       | Chic Fashion House       | Hyderabad |
+| 503       | Radiant Skin Co          | Bangalore |
+| 502       | Herbal Roots Cosmetics   | Delhi     |
+| 501       | Glow Essentials Pvt Ltd  | Mumbai    |
+
+5 rows selected.
+
+
+| TOTAL_SELLERS |
+|---------------|
+| 5             |
+
+1 row selected.
+
+
+| SELLER_NAME              | PRODUCT_NAME          | CATEGORY  | PRICE | STOCK |
+|--------------------------|-----------------------|-----------|-------|-------|
+| Chic Fashion House       | Floral Eau de Parfum  | Fragrance | 1800  | 15    |
+| Glow Essentials Pvt Ltd  | Matte Liquid Lipstick | Makeup    | 499   | 60    |
+| Herbal Roots Cosmetics   | Herbal Face Wash      | Skincare  | 250   | 80    |
+| Pure Naturals Store      | Cotton Printed Scarf  | Fashion   | 350   | 25    |
+| Radiant Skin Co          | Argan Hair Serum      | Haircare  | 650   | 0     |
+
+5 rows selected.

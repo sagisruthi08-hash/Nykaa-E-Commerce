@@ -1,0 +1,76 @@
+SELECT * FROM Payment;
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 501        | 101      | UPI            | 1500           | Success        |
+| 502        | 102      | Credit Card    | 2500           | Success        |
+| 503        | 103      | Debit Card     | 1800           | Pending        |
+| 504        | 104      | Net Banking    | 1200           | Success        |
+
+
+SELECT * FROM Payment
+WHERE Payment_ID = 501;
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 501        | 101      | UPI            | 1500           | Success        |
+
+
+SELECT * FROM Payment
+WHERE Payment_Status = 'Success';
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 501        | 101      | UPI            | 1500           | Success        |
+| 502        | 102      | Credit Card    | 2500           | Success        |
+| 504        | 104      | Net Banking    | 1200           | Success        |
+
+
+SELECT * FROM Payment
+WHERE Payment_Method = 'UPI';
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 501        | 101      | UPI            | 1500           | Success        |
+
+
+SELECT * FROM Payment
+WHERE Payment_Amount > 1500;
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 502        | 102      | Credit Card    | 2500           | Success        |
+| 503        | 103      | Debit Card     | 1800           | Pending        |
+
+
+SELECT MAX(Payment_Amount) AS Maximum_Payment
+FROM Payment;
+| MAXIMUM_PAYMENT |
+|-----------------|
+| 2500            |
+
+
+SELECT SUM(Payment_Amount) AS Total_Payment
+FROM Payment;
+| TOTAL_PAYMENT |
+|---------------|
+| 7000          |
+
+
+SELECT COUNT(*) AS Total_Payments
+FROM Payment;
+| TOTAL_PAYMENTS |
+|----------------|
+| 4              |
+
+
+SELECT * FROM Payment
+ORDER BY Payment_Amount DESC;
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 502        | 102      | Credit Card    | 2500           | Success        |
+| 503        | 103      | Debit Card     | 1800           | Pending        |
+| 501        | 101      | UPI            | 1500           | Success        |
+| 504        | 104      | Net Banking    | 1200           | Success        |
+
+
+SELECT * FROM Payment
+WHERE Payment_Status = 'Pending';
+| PAYMENT_ID | ORDER_ID | PAYMENT_METHOD | PAYMENT_AMOUNT | PAYMENT_STATUS |
+|------------|----------|----------------|----------------|----------------|
+| 503        | 103      | Debit Card     | 1800           | Pending        |

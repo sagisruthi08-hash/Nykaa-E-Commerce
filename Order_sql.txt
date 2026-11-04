@@ -1,0 +1,66 @@
+Table created.
+
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+
+| ORDER_ID | ORDER_DATE | ORDER_STATUS | TOTAL_AMOUNT | CUSTOMER_ID |
+| -------- | ---------- | ------------ | -----------: | ----------: |
+| 101      | 04-NOV-26  | Delivered    |      1500.00 |         101 |
+| 102      | 04-NOV-26  | Pending      |      2500.00 |         102 |
+| 103      | 04-NOV-26  | Shipped      |      1800.00 |         103 |
+| 104      | 04-NOV-26  | Delivered    |      1200.00 |         104 |
+
+
+| ORDER_ID | ORDER_DATE | ORDER_STATUS | TOTAL_AMOUNT | CUSTOMER_ID |
+| -------- | ---------- | ------------ | -----------: | ----------: |
+| 101      | 04-NOV-26  | Delivered    |      1500.00 |         101 |
+| 104      | 04-NOV-26  | Delivered    |      1200.00 |         104 |
+
+
+| ORDER_ID | ORDER_DATE | ORDER_STATUS | TOTAL_AMOUNT | CUSTOMER_ID |
+| -------- | ---------- | ------------ | -----------: | ----------: |
+| 102      | 04-NOV-26  | Pending      |      2500.00 |         102 |
+
+
+| TOTAL_ORDER_AMOUNT |
+| -----------------: |
+|               7000 |
+
+
+| TOTAL_ORDERS |
+| -----------: |
+|            4 |
+
+
+| ORDER_ID | CUSTOMER_ID | ORDER_DATE | ORDER_STATUS | TOTAL_AMOUNT |
+| -------- | ----------- | ---------- | ------------ | -----------: |
+| 101      | 101         | 04-NOV-26  | Delivered    |      1500.00 |
+| 102      | 102         | 04-NOV-26  | Pending      |      2500.00 |
+| 103      | 103         | 04-NOV-26  | Shipped      |      1800.00 |
+| 104      | 104         | 04-NOV-26  | Delivered    |      1200.00 |
+
+
+1 row updated.
+
+
+| ORDER_ID | ORDER_DATE | ORDER_STATUS | TOTAL_AMOUNT | CUSTOMER_ID |
+| -------- | ---------- | ------------ | -----------: | ----------: |
+| 102      | 04-NOV-26  | Delivered    |      2500.00 |         102 |
+
+
+1 row deleted.
+
+
+Commit complete.
+
+
+| ORDER_ID | ORDER_DATE | ORDER_STATUS | TOTAL_AMOUNT | CUSTOMER_ID |
+| -------- | ---------- | ------------ | -----------: | ----------: |
+| 101      | 04-NOV-26  | Delivered    |      1500.00 |         101 |
+| 102      | 04-NOV-26  | Delivered    |      2500.00 |         102 |
+| 103      | 04-NOV-26  | Shipped      |      1800.00 |         103 |
+
